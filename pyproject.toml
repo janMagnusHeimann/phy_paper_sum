@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools",  "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+ 
+[project]
+name = "aerospace-summarizer"
+authors = [
+    { name = "Jan Heimann", email = "jan_heimann@icloud.com" },
+    
+]
+description = "aerospace-summarizer"
+version = "0.0.1"
+requires-python = ">=3.11"
+classifiers = ["Programming Language :: Python :: 3"]
+dependencies = [
+    "typer[all]",
+    "numpy",
+    "matplotlib",
+    "natsort",
+    "pandas",
+    "tqdm",
+]
+ 
+[project.optional-dependencies]
+dev = [
+    "requests<2.32.0",
+    "pytest>=8.1.1",
+    "syrupy>=4.6.1",
+    "docker>=7.0.0",
+    "flake8>=7.0.0",
+    "Flake8-pyproject>=1.2.3",
+    "black>=24.3.0",
+]
+docs = [
+    "Sphinx>=7.2.6",
+    "furo>=2023.9.10",
+    "sphinxcontrib-plantuml>=0.27",
+    "sphinx-autobuild==2024.4.16",
+    "plantuml>=0.3.0",
+    "sphinx-copybutton>=0.5.2",
+]
+
+ 
+[tool.black]
+line-length = 120
+ 
+[tool.flake8]
+max-line-length = 120
+extend-ignore = ["E203"]
+ 
+[project.scripts]
+rocketOptimizer = "rocket_optimizer.__main__:main"
+ 
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]

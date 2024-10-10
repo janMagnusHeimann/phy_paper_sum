@@ -1,0 +1,13 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "black-formatter.args": [
+        "--line-length",
+        "120"
+    ],
+    "flake8.maxLineLength": 120,
+    "terminal.integrated.scrollback": 1000000,
+    "makefile.configureOnOpen": false
+}
