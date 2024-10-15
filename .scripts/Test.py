@@ -14,8 +14,7 @@ def summarize_text(text):
     try:
         response = openai.completions.create(  # Correct method for new version
             model="gpt-3.5-turbo",
-            # Using prompt instead of messages
-            prompt=f"Summarize this: {text}",  
+            prompt=f"Summarize this: {text}",  # Using prompt instead of messages
             max_tokens=150,  # Adjust this as needed
             temperature=0.5  # Set creativity level
         )
