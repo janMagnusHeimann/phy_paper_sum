@@ -1,3 +1,5 @@
+# pip install openai
+
 import openai
 import time
 
