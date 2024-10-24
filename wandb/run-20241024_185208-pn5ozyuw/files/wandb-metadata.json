@@ -1,0 +1,37 @@
+{
+    "os": "macOS-15.0.1-arm64-arm-64bit",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-10-24T16:52:09.644691",
+    "startedAt": "2024-10-24T16:52:08.937711",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/jan/Documents/dev/phy_paper_sum/.scripts/sciBert_Test.py",
+    "codePathLocal": ".scripts/sciBert_Test.py",
+    "codePath": ".scripts/sciBert_Test.py",
+    "git": {
+        "remote": "https://github.com/janMagnusHeimann/phy_paper_sum.git",
+        "commit": "3103ad3c0579eb00f0a246763d2531a36b6c7aec"
+    },
+    "email": null,
+    "root": "/Users/jan/Documents/dev/phy_paper_sum",
+    "host": "MacBookPro",
+    "username": "jan",
+    "executable": "/opt/miniconda3/envs/aiDev/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "/": {
+            "total": 926.3517189025879,
+            "used": 111.32093811035156
+        }
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}
