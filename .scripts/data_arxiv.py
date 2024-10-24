@@ -1,11 +1,14 @@
 import urllib.request
 import xml.etree.ElementTree as ET
-from pdfminer.high_level import extract_text  # Importing PDFMiner for text extraction
+from pdfminer.high_level import extract_text
 
 
 # Function to query arXiv API
 def query_arxiv(start_index=0, max_results=10):
-    url = f"http://export.arxiv.org/api/query?search_query=cat:physics.gen-ph&start={start_index}&max_results={max_results}"
+    url = (
+        f"http://export.arxiv.org/api/query?search_query=cat:physics.gen-ph"
+        f"&start={start_index}&max_results={max_results}"
+    )
     with urllib.request.urlopen(url) as response:
         data = response.read()
     return data
@@ -22,11 +25,16 @@ def parse_arxiv_data(data):
     root = ET.fromstring(data)
 
     # Find all entry elements (each paper is represented as an entry)
-    for entry in root.findall("atom:entry", namespace):
-        title = entry.find("atom:title", namespace).text
-        abstract = entry.find("atom:summary", namespace).text
-        pdf_url = entry.find('atom:link[@title="pdf"]', namespace).attrib["href"]
-        papers.append({"title": title, "abstract": abstract, "pdf_url": pdf_url})
+    for entry in root.findall(
+         "atom:entry", namespace):
+        title = entry.find(
+            "atom:title", namespace).text
+        abstract = entry.find(
+            "atom:summary", namespace).text
+        pdf_url = entry.find(
+            'atom:link[@title="pdf"]', namespace).attrib["href"]
+        papers.append({
+            "title": title, "abstract": abstract, "pdf_url": pdf_url})
 
     return papers
 
