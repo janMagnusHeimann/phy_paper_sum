@@ -19,6 +19,9 @@ dependencies = [
     "natsort",
     "pandas",
     "tqdm",
+    requests = "^2.28.0"
+    pdfminer.six = "^20221105"
+    python = ">=3.7"
 ]
  
 [project.optional-dependencies]
